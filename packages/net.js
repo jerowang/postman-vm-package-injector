@@ -22,12 +22,13 @@
 'use strict';
 
 const { Object } = primordials;
+const path = require('path');
 
 const EventEmitter = require('events');
 const stream = require('stream');
-const { inspect } = require('internal/util/inspect');
-const debug = require('internal/util/debuglog').debuglog('net');
-const { deprecate } = require('internal/util');
+const { inspect } = require(path.join(__dirname, 'internal/util/inspect'));
+const debug = require(path.join(__dirname, 'internal/util/debuglog')).debuglog('net');
+const { deprecate } = require(path.join(__dirname, 'internal/util/'));
 const {
   isIP,
   isIPv4,
@@ -35,8 +36,8 @@ const {
   isLegalPort,
   normalizedArgsSymbol,
   makeSyncWrite
-} = require('internal/net');
-const assert = require('internal/assert');
+} = require(path.join(__dirname, 'internal/net'));
+const assert = require(path.join(__dirname, 'internal/assert'));
 const {
   UV_EADDRINUSE,
   UV_EINVAL
@@ -59,7 +60,7 @@ const {
   newAsyncId,
   defaultTriggerAsyncIdScope,
   symbols: { async_id_symbol, owner_symbol }
-} = require('internal/async_hooks');
+} = require(path.join(__dirname, 'internal/async_hooks'));
 const {
   writevGeneric,
   writeGeneric,
@@ -68,7 +69,7 @@ const {
   kHandle,
   kUpdateTimer,
   setStreamTimeout
-} = require('internal/stream_base_commons');
+} = require(path.join(__dirname, 'internal/stream_base_commons'));
 const {
   codes: {
     ERR_INVALID_ADDRESS_FAMILY,
@@ -85,20 +86,20 @@ const {
   errnoException,
   exceptionWithHostPort,
   uvExceptionWithHostPort
-} = require('internal/errors');
-const { validateInt32, validateString } = require('internal/validators');
+} = require(path.join(__dirname, 'internal/errors'));
+const { validateInt32, validateString } = require(path.join(__dirname, 'internal/validators'));
 const kLastWriteQueueSize = Symbol('lastWriteQueueSize');
 const {
   DTRACE_NET_SERVER_CONNECTION,
   DTRACE_NET_STREAM_END
-} = require('internal/dtrace');
+} = require(path.join(__dirname, 'internal/dtrace'));
 
 // Lazy loaded to improve startup performance.
 let cluster;
 let dns;
 
 const { clearTimeout } = require('timers');
-const { kTimeout } = require('internal/timers');
+const { kTimeout } = require(path.join(__dirname, 'internal/timers'));
 
 const DEFAULT_IPV4_ADDR = '0.0.0.0';
 const DEFAULT_IPV6_ADDR = '::';

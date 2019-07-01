@@ -109,3 +109,4 @@ asar_temp/
 *.asar
 postman-sandbox/
 packages.config
+test.js

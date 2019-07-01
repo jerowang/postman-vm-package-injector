@@ -9,12 +9,12 @@ fi
 git clone --depth=1 --single-branch --branch master https://github.com/postmanlabs/postman-sandbox.git
 cd postman-sandbox
 
-cp ../environment.js lib/
-cp ../packages/net.js lib/vendor/
-
 npm i -D $packages
 cd lib/
 mv environment.js environment.orig.js
+
+cp ../../environment.js ./
+cp -r ../../packages/* vendor/
 node environment.js
 
 cd ..
@@ -23,9 +23,10 @@ npm run cache
 cd ..
 if [ ! -d "_out" ]; then
 	mkdir _out
-else
+elif [ "$(ls -A _out/)" ]; then
 	rm _out/*
 fi
+
 cp postman-sandbox/.cache/* _out/
 
 if [ -f app.asar ]; then
