@@ -14,7 +14,7 @@ defaultModules.forEach(pkg => {
   env.require[pkg] = { preferBuiltin: true, glob: true };
 });
 
-env.require.net = { resolve: '../vendor/net', expose: 'net', glob: true };
-
+// env.require.net = { resolve: '../vendor/net', expose: 'net', glob: true };
+env.files['../vendor/net'] = true;
 
 module.exports = env;

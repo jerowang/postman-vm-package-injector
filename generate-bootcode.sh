@@ -40,7 +40,7 @@ if [ -f app.asar ]; then
 	mv app.asar app.old.asar
 	asar p ./asar_temp app.asar
 	
-	#rm -rf asar_temp
+	rm -rf asar_temp
 fi
 
-#rm -rf postman-sandbox
+rm -rf postman-sandbox
