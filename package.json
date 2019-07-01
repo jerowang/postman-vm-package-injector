@@ -1,0 +1,15 @@
+{
+  "name": "postman-vm-package-injector",
+  "version": "1.0.0",
+  "description": "",
+  "main": "generate-bootcode.sh",
+  "scripts": {
+    "start": "./generate-bootcode.sh"
+  },
+  "keywords": [],
+  "author": "Jero Wang",
+  "license": "ISC",
+  "dependencies": {
+    "asar": "^2.0.1"
+  }
+}

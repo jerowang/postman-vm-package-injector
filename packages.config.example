@@ -1,0 +1,4 @@
+// This file should have a single line with comma separated values of node-packages
+// Example:
+is-even,is-odd,node-ssh
+// Only one line, remove all comments
